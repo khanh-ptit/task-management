@@ -1,8 +1,17 @@
 const express = require("express")
 const app = express()
-const port = 3000
+require("dotenv").config()
+const port = process.env.PORT
+const database = require("./config/database")
+database.connect()
 
-app.get('/', (req, res) => {
+const Task = require("./models/task.model")
+
+app.get('/tasks', async (req, res) => {
+    const tasks = await Task.find({
+        deleted: false
+    })
+    console.log(tasks)
     res.send("OK")
 })
 
