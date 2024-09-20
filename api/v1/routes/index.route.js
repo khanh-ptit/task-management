@@ -1,5 +1,5 @@
-const tasksRoutes = require("./task.route")
+const taskRoutes = require("./task.route")
 
 module.exports = (app) => {
-    app.use("/api/v1/tasks", tasksRoutes)
+    app.use("/api/v1/tasks", taskRoutes)
 }
