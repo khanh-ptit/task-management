@@ -10,11 +10,12 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    deletedAt: Date
+    deletedAt: Date,
+    createdBy: String
 }, {
     timestamps: true
 })
 
 const Task = mongoose.model("Task", taskSchema, "tasks")
 
-module.exports = Task 
+module.exports = Task
