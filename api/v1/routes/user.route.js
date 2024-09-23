@@ -3,6 +3,7 @@ const router = express.Router()
 
 const controller = require("../controllers/user.controller")
 const validate = require("../validates/user.validate")
+const authMiddleware = require("../middlewares/auth.middleware")
 
 router.post("/register", validate.register, controller.register)
 
@@ -16,6 +17,6 @@ router.get("/logout", controller.logout)
 
 router.post("/password/reset", validate.resetPassword, controller.resetPassword)
 
-router.get("/info", controller.info)
+router.get("/info", authMiddleware.requireAuth, controller.info)
 
 module.exports = router
