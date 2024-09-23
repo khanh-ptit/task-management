@@ -16,4 +16,6 @@ router.get("/logout", controller.logout)
 
 router.post("/password/reset", validate.resetPassword, controller.resetPassword)
 
+router.get("/info", controller.info)
+
 module.exports = router
