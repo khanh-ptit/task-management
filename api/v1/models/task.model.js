@@ -11,7 +11,8 @@ const taskSchema = new mongoose.Schema({
         default: false
     },
     deletedAt: Date,
-    createdBy: String
+    createdBy: String,
+    listUser: Array
 }, {
     timestamps: true
 })
