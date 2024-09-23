@@ -63,7 +63,6 @@ module.exports.detail = async (req, res) => {
     }
 }
 
-
 // [PATCH] /api/v1/tasks/change-status/:status/:id
 module.exports.changeStatus = async (req, res) => {
     try {
@@ -155,7 +154,7 @@ module.exports.changeMulti = async (req, res) => {
 // [POST] /api/v1/tasks/create
 module.exports.create = async (req, res) => {
     try {
-        console.log(req.body)
+        // console.log(req.body)
         req.body.createdBy = req.user.id
         const task = new Task(req.body)
         const data = await task.save()
